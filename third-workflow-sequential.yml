@@ -1,0 +1,35 @@
+name: "Second_ParallelWorflow"
+on: workflow_dispatch
+jobs:
+  FirstJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FirstStep
+        run: echo "Welcome to Github actions workflow demo"
+      - name: Second Step
+        run: date
+      - name: Third step
+        run: ls
+      - name: Fourth Step
+        run: sleep 30
+  SecondJob: 
+    runs-on: ubuntu-latest
+    needs: FirstJob
+    steps:
+      - name: First Step in 2nd job
+        run: |
+          pwd
+          echo uname -a > index.txt
+          echo "Welcome to 2nd job"
+          sleep 1m
+  ThirdJob:
+    runs-on: ubuntu-latest
+    needs: SecondJob
+    steps:
+      - name: second step in 2nd job
+        run: |
+          sleep 30
+          date
+          sleep 60
+          ls -l
+          
