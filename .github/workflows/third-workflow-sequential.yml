@@ -1,4 +1,4 @@
-name: "Third Workflow Sequentially"
+name: "Second_ParallelWorflow"
 on: workflow_dispatch
 jobs:
   FirstJob:
@@ -22,6 +22,8 @@ jobs:
           echo uname -a > index.txt
           echo "Welcome to 2nd job"
           sleep 1m
+          ls
+          cat index.txt
   ThirdJob:
     runs-on: ubuntu-latest
     needs: SecondJob
@@ -31,5 +33,4 @@ jobs:
           sleep 30
           date
           sleep 60
-          ls -l
           
