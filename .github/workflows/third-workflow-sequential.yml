@@ -1,4 +1,4 @@
-name: "Second_ParallelWorflow"
+name: "Third Workflow Sequentially"
 on: workflow_dispatch
 jobs:
   FirstJob:
