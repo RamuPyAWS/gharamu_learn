@@ -1,0 +1,10 @@
+name: "PushEventWorkflow"
+on: push
+jobs:
+  push-event-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FirstStep
+        run: echo "Welcome to Github actions workflow demo"
+      - name: Second Step
+        run: pwd
