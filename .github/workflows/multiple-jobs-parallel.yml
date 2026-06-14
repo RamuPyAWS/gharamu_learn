@@ -10,4 +10,19 @@ jobs:
         run: Date
       - name: Third step
         run: ls
-  
+  SecondJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step in 2nd job
+        run: |
+          pwd
+          touch index.txt
+          echo "Welcome to 2nd job"
+  ThirdJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: second step in 2nd job
+        run: |
+          ehco `Date`
+          ls 
+          
