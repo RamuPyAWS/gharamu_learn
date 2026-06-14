@@ -1,0 +1,12 @@
+name: "MyFirstWorkFlow"
+on: workflow_dispatch
+jobs:
+  action-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FirstStep
+        run: echo "Welcome to Github actions workflow demo"
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Print index.html file
+        run: cat index.html
