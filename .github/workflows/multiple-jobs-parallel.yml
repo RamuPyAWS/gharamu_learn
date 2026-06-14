@@ -1,1 +1,13 @@
-
+name: "Second_ParallelWorflow"
+on: workflow_dispatch
+jobs:
+  FirstJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FirstStep
+        run: echo "Welcome to Github actions workflow demo"
+      - name: Second Step
+        run: Date
+      - name: Third step
+        run: ls
+  
